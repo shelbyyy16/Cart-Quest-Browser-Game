@@ -15,7 +15,8 @@ function generateSequence() {
 }
 
 ## RENDER
-- Gameboard populates
+- Gameboard populate
+    -9 clickable buttons, title, message display area and start button
 - Display start button
 
 ## SHOW PATTERN
@@ -32,7 +33,7 @@ function displaySequence() {
 
 -Display message "Player's turn"
 function displayMessage(message) {
-    // Code to display messages on the screen
+    // Display players turn message 
 }
 
 ## PLAYER TURN
