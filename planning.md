@@ -34,6 +34,8 @@ https://www.canva.com/design/DAFyetwRWbA/Z-CWeIO4n2uwTOq4rvOt-w/edit?utm_content
 -Display message "Player's turn"
 
 ## PLAYER TURN
+-Add event listener for button clicks
+-Add event listener for start button
 -Player presses button corresponding with pattern 
 -Player presses submit button
 
