@@ -3,89 +3,49 @@ Project 1 - Browser Base Game
 ## Game type
 Simon
 
-
-Wire frame: https://www.canva.com/design/DAFyetwRWbA/Z-CWeIO4n2uwTOq4rvOt-w/edit?utm_content=DAFyetwRWbA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
-![]()
-
-function displayMessage(message) {
-    // Code to display messages on the screen
-}
-
-
-// Initialize the game
-startGame()
-
-1. SETUP
-
-// Define game variables and arrays
-let simonSequence = []      // Array to store the computer-generated sequence
-let playerSequence = []     // Array to store the player's input sequence
-let round = 1               // Track the current round
-let gameStarted = false     // Track whether the game has started
-let gameActive = false      // Track whether it's the player's turn to respond
+## User Stories
+1. As a player, I would like to start when I am ready
+2. As a player, when I am ready I would like to see the Simon pattern
+3. As a player, I would like to click buttons for my Simon selection
+4. As a user I would like to press submit when I am done selecting my answers
+5. As a user, after I submit my patter I would like to know if I won or lost
+6. ICEBOX: As a player, I would like to see how many rounds I have won/lost
+7. ICEBOX: As a player, I would like to see my current streaks of wins
 
 
-// Define game functions
-function startGame() {
-    gameStarted = true
-    displayMessage("Get ready to play!")
-    setTimeout(() => {
-        nextRound()
-    }, 1000)  // Delay before starting the first round
-}
+## Wire frame: 
+https://www.canva.com/design/DAFyetwRWbA/Z-CWeIO4n2uwTOq4rvOt-w/edit?utm_content=DAFyetwRWbA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-2. INIT
 
-function nextRound() {
-    playerSequence = []  // Clear the player's input sequence
-    displayMessage(`Round ${round}`)
-    generateSimonSequence()  // Generate and show the computer's sequence
-    playSimonSequence()
-    gameActive = true
-}
 
-3. SHUFFLE ARRAY
+## SETUP:
+- Defiine game variables 
+- Define game array
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    // Swap elements array[i] and array[j]
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
+## INIT:
+- Randomize the game array
 
-4. ARRAY IS SHOWN TO PLAY FOR X AMOUNT OF TIME
+## RENDER
+- Gameboard populates
+- Display start button
 
-function playSimonSequence() {
-    // Code to play the computer's sequence (e.g., by highlighting buttons or playing sounds)
-}
+## SHOW PAATTERN
+-Randomized pattern is shown visually ont he screen for player to memorize
+-Display message "Player's turn"
 
-5. PLAYER INPUTS THEYRE CHOICES
+## PLAYER TURN
+-Player presses button corresponding with pattern 
+-Player presses submit button
 
-function playerInput(color) {
-    if (gameActive) {
-        playerSequence.push(color)
-        // Code to check if the player's input matches the current simonSequence
-        // If correct, continue to the next round; if not, display "Game Over."
-    }
-}
+## CALCULATE
+-Compares game array to players array
+-If arrays match, player winds round
+-display win/loss
+-display play again button
 
-6. CONPUTER INTERPRETS PLAYER ANSWER
-// Main game loop (controlled by player's interaction)
-while (gameStarted) {
-    // Listen for player input (e.g., button clicks)
-    // Call playerInput() function when a button is clicked
-}
+## PLAY AGAIN
+-randomize array again
+-goes back to render
 
-6. COMPUTER COMPARES GAME ARRAY TO PLAYER ARRAY
 
-7. IF PLAYER IS CORRECT A NEW ARRAY IS RANDOMIZED
 
-function nextRound() {
-    playerSequence = []  // Clear the player's input sequence
-    displayMessage(`Round ${round}`)
-    generateSimonSequence()  // Generate and show the computer's sequence
-    playSimonSequence()
-    gameActive = true
-}
