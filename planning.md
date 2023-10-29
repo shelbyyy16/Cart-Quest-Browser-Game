@@ -24,20 +24,21 @@ https://www.canva.com/design/DAFyetwRWbA/Z-CWeIO4n2uwTOq4rvOt-w/edit?utm_content
 
 ## INIT:
 - Randomize the game array
+- start game 
 
 ## RENDER
 - Gameboard populates
 - Display start button
 
-## SHOW PAATTERN
+## SHOW PATTERN
 -Randomized pattern is shown visually ont he screen for player to memorize
 -Display message "Player's turn"
 
 ## PLAYER TURN
 -Add event listener for button clicks
 -Add event listener for start button
--Player presses button corresponding with pattern 
--Player presses submit button
+-Player presses button corresponding with pattern -> add push () function
+-Player presses submit button (event listener)
 
 ## CALCULATE
 -Compares game array to players array
@@ -48,6 +49,3 @@ https://www.canva.com/design/DAFyetwRWbA/Z-CWeIO4n2uwTOq4rvOt-w/edit?utm_content
 ## PLAY AGAIN
 -randomize array again
 -goes back to render
-
-
-
