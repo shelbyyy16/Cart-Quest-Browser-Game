@@ -1,7 +1,11 @@
 console.log('js:loaded')
 
 //Master Array to store all game board button id's//
-const masterSequence = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+const buttons = document.querySelectorAll(".grid-button");
+const masterSequence = []
+buttons.forEach(button => {
+    masterSequence.push(button.id);
+});
 console.log(masterSequence);
 
 //Computer empty array and Player empty arrray//
@@ -22,11 +26,17 @@ generateSequence()
 console.log(computerSequence);
 
 //Event listener for start button
-
-//Start game function
-
-function startGame() {
-    alert ("Watch the pattern carefully! Repeat the pattern back and press submit button")
-}
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", startGame);
+
+//Start game function (inclu)
+
+function startGame() {
+    alert ("Watch the pattern carefully!")
+}
+
+
+//Display randomized pattern on game board
+function displaySequence() {
+    // Iterate through the computerSequence and highlight/shake the corresponding tile
+}
