@@ -49,11 +49,11 @@ function handleButtonClick(id) {
 
 -Add event listener for "submit" button
 submitButton.addEventListener('click', submit);
-// Submit button kicks off checkPlayerInput()
+// Submit button kicks off sequenceMatch()
 
 ## CALCULATE
 -Compare game array to players array
-function checkPlayerInput() {
+function sequenceMatch() {
     // Compares playerSequence with computerSequence
     // If it matches, kick off gameWin()
     // If it doesn't match, kick off gameOver()

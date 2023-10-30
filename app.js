@@ -32,7 +32,7 @@ startButton.addEventListener("click", startGame);
 //Start game function
 
 function startGame() {
-  alert("Watch the pattern carefully!");
+  alert("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
 }
 
@@ -71,29 +71,61 @@ submitButton.addEventListener("click", submitButtonClick);
 
 //Function to compare playerSequence to computerSequence
 function compareSequences() {
-    if (playerSequence.length !== computerSequence.length) {
-        return false;
-    }
+  if (playerSequence.length !== computerSequence.length) {
+    return false;
+  }
 
-    for (let i = 0; i < playerSequence.length; i++) {
-        if (playerSequence[i] !== computerSequence[i]) {
-            return false;
-        }
+  for (let i = 0; i < playerSequence.length; i++) {
+    if (playerSequence[i] !== computerSequence[i]) {
+      return false;
     }
-
-    return true;
+  }
+  return true;
 }
 
 //compareSequences triggered by pressing "Submit" button
 function submitButtonClick() {
-    console.log("Submit button clicked!");
+  console.log("Submit button clicked!");
 
-    const sequencesMatch = compareSequences();
-    if (sequencesMatch) {
-        alert("Congratulations! The sequences match.");
-        // You can add further logic for a successful match
-    } else {
-        alert("Oops! The sequences don't match.");
-        // You can add logic for when the sequences don't match
-    }
+  const sequencesMatch = compareSequences();
+  if (sequencesMatch) {
+    alert("Delicious! The sequences match. Press NEXT for the next level");
+  } else {
+    alert(
+      "You burned the meal! Your sequence didn't match. Press START to play again"
+    );
+  }
 }
+
+//Event listener for restart button, that activates the restartGame function
+
+const restartButton = document.getElementById("restart-button");
+
+restartButton.addEventListener("click", () => {
+  restartGame();
+});
+
+//Function to restart the game
+
+function restartGame() {
+  masterSequence.length = 0;
+  computerSequence.length = 0;
+  playerSequence.length = 0;
+  generateSequence();
+}
+
+//Event listener for next button, that activates generateHarderSequence to make the next level harder
+
+const nextButton = document.getElementById("next-button");
+
+nextButtonButton.addEventListener("click", () => {
+    generateHarderSequence();
+});
+
+function generateHarderSequence() {
+  masterSequence.sort(() => Math.random() - 0.5);
+  computerSequence.push(...masterSequence.slice(0, elementsToAdd));
+
+  elementsToAdd++;
+}
+
