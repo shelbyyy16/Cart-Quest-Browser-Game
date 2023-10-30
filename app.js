@@ -25,6 +25,15 @@ function generateSequence() {
 generateSequence();
 console.log(computerSequence);
 
+let elementsToAdd = 4;
+
+function generateHarderSequence() {
+  masterSequence.sort(() => Math.random() - 0.5);
+  computerSequence.push(...masterSequence.slice(0, elementsToAdd));
+
+  elementsToAdd++;
+}
+
 //Event listener for start button
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", startGame);
@@ -32,7 +41,7 @@ startButton.addEventListener("click", startGame);
 //Start game function
 
 function startGame() {
-  alert("Watch the pattern carefully! Press start to see the pattern again");
+  //alert("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
 }
 
@@ -49,7 +58,7 @@ async function displaySequence() {
     button.classList.remove("shake");
     await sleep(1000);
   }
-  alert("Repeat the pattern and press submit");
+  //alert("Repeat the pattern and press submit");
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
@@ -118,14 +127,13 @@ function restartGame() {
 
 const nextButton = document.getElementById("next-button");
 
-nextButtonButton.addEventListener("click", () => {
-    generateHarderSequence();
+nextButton.addEventListener("click", () => {
+  nextLevel();
 });
 
-function generateHarderSequence() {
-  masterSequence.sort(() => Math.random() - 0.5);
-  computerSequence.push(...masterSequence.slice(0, elementsToAdd));
-
-  elementsToAdd++;
+function nextLevel() {
+  masterSequence.length = 0;
+  computerSequence.length = 0;
+  playerSequence.length = 0;
+  generateHarderSequence();
 }
-
