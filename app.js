@@ -5,8 +5,8 @@ const buttons = document.querySelectorAll(".grid-button");
 const masterSequence = []
 buttons.forEach(button => {
     masterSequence.push(button.id);
+    button.addEventListener("click", () => handleButtonClick(button.id));
 });
-console.log(masterSequence);
 
 //Computer empty array and Player empty arrray//
 const computerSequence = []
@@ -29,7 +29,7 @@ console.log(computerSequence);
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", startGame);
 
-//Start game function (inclu)
+//Start game function 
 
 function startGame() {
     alert ("Watch the pattern carefully!")
@@ -46,8 +46,17 @@ async function displaySequence() {
     for (const id of computerSequence) {
         const button = document.getElementById(id);
         button.classList.add("shake");
-        await sleep(800);
+        await sleep(1000);
         button.classList.remove("shake");
-        await sleep(800);
+        await sleep(1000);
     }
+    alert ("Repeat the pattern and press submit")
+}
+
+//Event listener for player clicking grid-buttons(placed above in buttons.forEach)
+//Function that adds clicked buttons to playerSequence array
+
+function handleButtonClick(clickedId) {
+    playerSequence.push(clickedId);
+    console.log("Button " + clickedId + " was clicked. playerSequence: " + playerSequence.join(", "));
 }
