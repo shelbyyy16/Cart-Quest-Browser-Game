@@ -20,3 +20,13 @@ function generateSequence(){
 
 generateSequence()
 console.log(computerSequence);
+
+//Event listener for start button
+
+//Start game function
+
+function startGame() {
+    alert ("Watch the pattern carefully! Repeat the pattern back and press submit button")
+}
+const startButton = document.getElementById("start-button");
+startButton.addEventListener("click", startGame);
