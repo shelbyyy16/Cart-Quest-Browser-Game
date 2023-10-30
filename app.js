@@ -98,11 +98,9 @@ function submitButtonClick() {
 
   const sequencesMatch = compareSequences();
   if (sequencesMatch) {
-    alert("Delicious! The sequences match. Press NEXT for the next level");
+    //alert("Delicious! The sequences match. Press NEXT for the next level");
   } else {
-    alert(
-      "You burned the meal! Your sequence didn't match. Press START to play again"
-    );
+    //alert( "You burned the meal! Your sequence didn't match. Press START to play again");
   }
 }
 
