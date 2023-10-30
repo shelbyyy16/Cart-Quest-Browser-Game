@@ -64,3 +64,36 @@ function handleButtonClick(clickedId) {
       playerSequence.join(", ")
   );
 }
+
+//Event listener for Submit button
+const submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", submitButtonClick);
+
+//Function to compare playerSequence to computerSequence
+function compareSequences() {
+    if (playerSequence.length !== computerSequence.length) {
+        return false;
+    }
+
+    for (let i = 0; i < playerSequence.length; i++) {
+        if (playerSequence[i] !== computerSequence[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+//compareSequences triggered by pressing "Submit" button
+function submitButtonClick() {
+    console.log("Submit button clicked!");
+
+    const sequencesMatch = compareSequences();
+    if (sequencesMatch) {
+        alert("Congratulations! The sequences match.");
+        // You can add further logic for a successful match
+    } else {
+        alert("Oops! The sequences don't match.");
+        // You can add logic for when the sequences don't match
+    }
+}
