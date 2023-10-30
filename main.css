@@ -1,6 +1,7 @@
 Body {
-  background-color: black;
-  color: bisque;
+  background-image: url(https://i.imgur.com/rjssQUC.png);
+  background-size: cover;
+  color: black;
 }
 
 .header-title {
@@ -12,6 +13,7 @@ Body {
 }
 
 .game-container {
+  background-color: bisque;
   border: 4px solid yellow;
   text-align: center;
 }
