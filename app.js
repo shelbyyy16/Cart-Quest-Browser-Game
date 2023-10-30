@@ -15,15 +15,22 @@ const playerSequence = [];
 //console.log(computerSequence);
 //console.log(playerSequence);
 
+//Stats
+let wins = 0;
+let losses = 0;
+let streak = 0;
+console.log(`Wins: ${wins}, Loses: ${losses}`);
+
 //Randomize the game array//
 
 function generateSequence() {
+  computerSequence.length = 0;
+  playerSequence.length = 0;
   masterSequence.sort(() => Math.random() - 0.5);
   computerSequence.push(...masterSequence.slice(0, 4));
+  console.log(computerSequence)
 }
 
-generateSequence();
-console.log(computerSequence);
 
 let elementsToAdd = 4;
 
@@ -41,7 +48,9 @@ startButton.addEventListener("click", startGame);
 //Start game function
 
 function startGame() {
+  generateSequence()
   //alert("Watch the pattern carefully! Press start to see the pattern again");
+  console.log("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
 }
 
@@ -59,6 +68,7 @@ async function displaySequence() {
     await sleep(1000);
   }
   //alert("Repeat the pattern and press submit");
+  console.log("Repeat the pattern and press submit");
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
@@ -98,10 +108,15 @@ function submitButtonClick() {
 
   const sequencesMatch = compareSequences();
   if (sequencesMatch) {
+    wins += 1;
     //alert("Delicious! The sequences match. Press NEXT for the next level");
+    console.log("Delicious! The sequences match. Press NEXT for the next level");
   } else {
+    losses +=1;
     //alert( "You burned the meal! Your sequence didn't match. Press START to play again");
+    console.log("You burned the meal! Your sequence didn't match. Press START to play again");
   }
+  console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
 
 //Event listener for restart button, that activates the restartGame function
@@ -115,10 +130,13 @@ restartButton.addEventListener("click", () => {
 //Function to restart the game
 
 function restartGame() {
-  masterSequence.length = 0;
-  computerSequence.length = 0;
-  playerSequence.length = 0;
-  generateSequence();
+  console.log("Restart button clicked!");
+  //Does not need to generate
+  //This should reset Wins, Losses, and Current Streak
+  wins = 0;
+  losses = 0;
+  console.log(`Wins: ${wins}, Loses: ${losses}`);
+  //generateSequence();
 }
 
 //Event listener for next button, that activates generateHarderSequence to make the next level harder
