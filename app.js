@@ -12,8 +12,8 @@ console.log(masterSequence);
 const computerSequence = []
 const playerSequence = []
 
-console.log(computerSequence);
-console.log(playerSequence);
+//console.log(computerSequence);
+//console.log(playerSequence);
 
 //Randomize the game array//
 
@@ -33,10 +33,21 @@ startButton.addEventListener("click", startGame);
 
 function startGame() {
     alert ("Watch the pattern carefully!")
+    displaySequence();
 }
 
 
-//Display randomized pattern on game board
-function displaySequence() {
-    // Iterate through the computerSequence and highlight/shake the corresponding tile
+//Display randomized pattern on game board. Using async/await to make buttons shake one after another, instead of all at the same time
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function displaySequence() {
+    for (const id of computerSequence) {
+        const button = document.getElementById(id);
+        button.classList.add("shake");
+        await sleep(800);
+        button.classList.remove("shake");
+        await sleep(800);
+    }
 }
