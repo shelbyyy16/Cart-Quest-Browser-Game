@@ -25,38 +25,54 @@
 .message-container {
   border: 6px solid purple;
   background-color: rgb(192, 150, 211);
-  max-width: 800px; 
+  margin-top: 20px;
+  width: 700px;
+  height: 50px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
 #message-box {
   border: 6px solid rgb(228, 47, 150);
   background-color: lightpink;
+  width: 400px;
+  height: 40px;
+  margin: 0;
   text-align: center;
 }
 .game-container {
   border: 4px solid yellow;
   background-color: lightyellow;
   text-align: center;
+  width: 700px;
+  margin: 20px; 
+  padding: 10px;
 }
 
 .button-grid-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 20px;
   align-items: center;
-  margin: 20px 0px 20px 72px;
+  text-align: center;
 }
 
 .grid-button {
-  height: 120px;
-  width: 120px;
+  height: 200px;
+  width: 220px;
   align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: mediumslateblue;
+
 }
 
 .icon {
-height: 110px;
-width: 110px;
+height: 140px;
+width: 140px;
 align-items: center;
+
 }
 
 .shake {
