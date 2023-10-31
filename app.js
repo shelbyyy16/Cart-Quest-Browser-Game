@@ -53,8 +53,8 @@ function startGame() {
   //alert("Watch the pattern carefully! Press start to see the pattern again");
   //console.log("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
-  hideStartButton()
-  showSubmitButton()
+  hideStartButton();
+  showSubmitButton();
 }
 
 //Display randomized pattern on game board. Using async/await to make buttons shake one after another, instead of all at the same time
@@ -112,14 +112,14 @@ function submitButtonClick() {
   const sequencesMatch = compareSequences();
   if (sequencesMatch) {
     wins += 1;
-    showNextButton()
+    showNextButton();
     //display message to go here
   } else {
     losses += 1;
-    showStartButton()
+    showStartButton();
     //display message to go here
   }
-  hideSubmitButton()
+  hideSubmitButton();
   updateStats();
   console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
@@ -154,11 +154,11 @@ function nextLevel() {
   //masterSequence.length = 0;
   computerSequence.length = 0;
   playerSequence.length = 0;
-  startMessage()
+  startMessage();
   generateHarderSequence();
   displaySequence();
-  hideNextButton()
-  showSubmitButton()
+  hideNextButton();
+  showSubmitButton();
 }
 
 //Display messages to player
