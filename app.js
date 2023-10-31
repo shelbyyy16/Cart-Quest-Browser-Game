@@ -32,13 +32,14 @@ function generateSequence() {
 }
 
 
-let elementsToAdd = 4;
+let elementsToAdd = 5;
 
 function generateHarderSequence() {
   masterSequence.sort(() => Math.random() - 0.5);
   computerSequence.push(...masterSequence.slice(0, elementsToAdd));
 
   elementsToAdd++;
+  console.log(computerSequence)
 }
 
 //Event listener for start button
@@ -127,16 +128,13 @@ restartButton.addEventListener("click", () => {
   restartGame();
 });
 
-//Function to restart the game
+//Function to restart the game (reset Wins, Losses, and Current Streak)
 
 function restartGame() {
   console.log("Restart button clicked!");
-  //Does not need to generate
-  //This should reset Wins, Losses, and Current Streak
   wins = 0;
   losses = 0;
   console.log(`Wins: ${wins}, Loses: ${losses}`);
-  //generateSequence();
 }
 
 //Event listener for next button, that activates generateHarderSequence to make the next level harder
@@ -148,8 +146,13 @@ nextButton.addEventListener("click", () => {
 });
 
 function nextLevel() {
-  masterSequence.length = 0;
+  console.log("Next button clicked!");
+  //masterSequence.length = 0;
   computerSequence.length = 0;
   playerSequence.length = 0;
   generateHarderSequence();
+  displaySequence();
 }
+
+//Display messages to player
+
