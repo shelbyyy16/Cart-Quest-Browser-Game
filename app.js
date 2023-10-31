@@ -69,7 +69,7 @@ async function displaySequence() {
     await sleep(1000);
   }
   //alert("Repeat the pattern and press submit");
-  console.log("Repeat the pattern and press submit");
+  //console.log("Repeat the pattern and press submit");
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
@@ -105,22 +105,23 @@ function compareSequences() {
 
 //compareSequences triggered by pressing "Submit" button
 function submitButtonClick() {
-  console.log("Submit button clicked!");
+  //console.log("Submit button clicked!");
 
   const sequencesMatch = compareSequences();
   if (sequencesMatch) {
     wins += 1;
     //alert("Delicious! The sequences match. Press NEXT for the next level");
-    console.log(
-      "Delicious! The sequences match. Press NEXT for the next level"
-    );
+    //console.log(
+     // "Delicious! The sequences match. Press NEXT for the next level"
+    //);
   } else {
     losses += 1;
     //alert( "You burned the meal! Your sequence didn't match. Press START to play again");
-    console.log(
-      "You burned the meal! Your sequence didn't match. Press START to play again"
-    );
+   // console.log(
+      //"You burned the meal! Your sequence didn't match. Press START to play again"
+    //);
   }
+  updateStats();
   console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
 
@@ -135,7 +136,7 @@ restartButton.addEventListener("click", () => {
 //Function to restart the game (reset Wins, Losses, and Current Streak)
 
 function restartGame() {
-  console.log("Restart button clicked!");
+  //console.log("Restart button clicked!");
   wins = 0;
   losses = 0;
   console.log(`Wins: ${wins}, Loses: ${losses}`);
@@ -150,10 +151,11 @@ nextButton.addEventListener("click", () => {
 });
 
 function nextLevel() {
-  console.log("Next button clicked!");
+  //console.log("Next button clicked!");
   //masterSequence.length = 0;
   computerSequence.length = 0;
   playerSequence.length = 0;
+  displayMessage()
   generateHarderSequence();
   displaySequence();
 }
@@ -165,10 +167,19 @@ const messageText = document.getElementById("message-text");
 function displayMessage() {
   messageText.innerHTML = "Watch the pattern carefully!";
   setTimeout(() => {
-    messageText.innerHTML = "";
+    messageText.innerHTML = "Now, repeat the pattern and press submit.";
     setTimeout(() => {
-      messageText.innerHTML = "Now, repeat the pattern and press submit.";
-    }, 1000);
+      messageText.innerHTML = "";
+    }, 10000);
   }, 9000);
 }
 //console.log(displayMessage);
+
+//Function to update wins, losses and streaks
+function updateStats() {
+  const winsElement = document.getElementById("wins");
+  const lossesElement = document.getElementById("losses");
+
+  winsElement.innerHTML = `Wins: ${wins}`;
+  lossesElement.innerHTML = `Losses: ${losses}`;
+}
