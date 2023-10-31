@@ -119,6 +119,7 @@ function submitButtonClick() {
     showStartButton()
     //display message to go here
   }
+  hideSubmitButton()
   updateStats();
   console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
@@ -157,6 +158,7 @@ function nextLevel() {
   generateHarderSequence();
   displaySequence();
   hideNextButton()
+  showSubmitButton()
 }
 
 //Display messages to player

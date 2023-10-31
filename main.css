@@ -14,11 +14,18 @@
 .main-container {
   border: 8px solid red;
   background-color: lightcoral;
+  max-width: 800px; 
+  margin: auto; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .message-container {
   border: 6px solid purple;
   background-color: rgb(192, 150, 211);
+  max-width: 800px; 
 }
 
 #message-box {
@@ -37,6 +44,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   align-items: center;
+  margin: 20px 0px 20px 72px;
 }
 
 .grid-button {
@@ -89,4 +97,5 @@ align-items: center;
 
 .action-button {
   display: none; 
+  text-align: center;
 }
