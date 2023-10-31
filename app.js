@@ -1,5 +1,19 @@
 console.log("js:loaded");
 
+window.addEventListener("load", (event) => {
+  beginMessage();
+})
+
+
+function beginMessage() {
+  messageText.innerHTML = "Press start to begin";
+
+  // Add a click event listener to the start button
+  startButton.addEventListener("click", function () {
+    messageText.innerHTML = ""; // Clear the message when the start button is clicked
+  });
+}
+
 //Master Array to store all game board button id's//
 const buttons = document.querySelectorAll(".grid-button");
 const masterSequence = [];
@@ -43,7 +57,7 @@ function generateHarderSequence() {
 
 //Event listener for start button
 const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", startGame,)
 
 //Start game function
 
@@ -63,6 +77,8 @@ function sleep(ms) {
 }
 
 async function displaySequence() {
+  await sleep(2000);
+  
   for (const id of computerSequence) {
     const button = document.getElementById(id);
     button.classList.add("shake");
@@ -70,8 +86,6 @@ async function displaySequence() {
     button.classList.remove("shake");
     await sleep(1000);
   }
-  //alert("Repeat the pattern and press submit");
-  //console.log("Repeat the pattern and press submit");
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
@@ -79,11 +93,7 @@ async function displaySequence() {
 
 function handleButtonClick(clickedId) {
   playerSequence.push(clickedId);
-  console.log(
-    "Button " +
-      clickedId +
-      " was clicked. playerSequence: " +
-      playerSequence.join(", ")
+  console.log("Button " + clickedId + " was clicked. playerSequence: " + playerSequence.join(", ")
   );
 }
 
@@ -113,11 +123,11 @@ function submitButtonClick() {
   if (sequencesMatch) {
     wins += 1;
     showNextButton();
-    winMessage()
+    winMessage();
   } else {
     losses += 1;
     showStartButton();
-    loseMessage()
+    loseMessage();
   }
   hideSubmitButton();
   updateStats();
@@ -166,13 +176,15 @@ function nextLevel() {
 const messageText = document.getElementById("message-text");
 
 function startMessage() {
-  messageText.innerHTML = "Watch the pattern carefully!";
   setTimeout(() => {
-    messageText.innerHTML = "Now, repeat the pattern and press submit.";
+    messageText.innerHTML = "Watch the pattern carefully!";
     setTimeout(() => {
-      messageText.innerHTML = "";
-    }, 10000);
-  }, 9000);
+      messageText.innerHTML = "Now, repeat the pattern and press submit.";
+      setTimeout(() => {
+        messageText.innerHTML = "";
+      }, 10000);
+    }, 2000); // Delay for 2 seconds before displaying the second message
+  }, 100); // Total delay of 7 seconds before the first message
 }
 
 function winMessage() {
@@ -181,8 +193,8 @@ function winMessage() {
     messageText.innerHTML = "Press next to continue to the next level";
     setTimeout(() => {
       messageText.innerHTML = "";
-    }, 5000); 
-  }, 2000); 
+    }, 5000);
+  }, 2000);
 }
 
 function loseMessage() {
@@ -204,7 +216,6 @@ function updateStats() {
   winsElement.innerHTML = `Wins: ${wins}`;
   lossesElement.innerHTML = `Losses: ${losses}`;
 }
-
 
 //Functions to make the toggle buttons appear and disappear when not in use
 
