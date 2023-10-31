@@ -49,6 +49,7 @@ startButton.addEventListener("click", startGame);
 //Start game function
 
 function startGame() {
+  displayMessage();
   generateSequence()
   //alert("Watch the pattern carefully! Press start to see the pattern again");
   console.log("Watch the pattern carefully! Press start to see the pattern again");
@@ -155,4 +156,10 @@ function nextLevel() {
 }
 
 //Display messages to player
+const messageText = document.getElementById("message-text");
+
+function displayMessage() {
+  messageText.innerHTML = 'Watch the pattern carfully!';
+}
+//console.log(displayMessage);
 
