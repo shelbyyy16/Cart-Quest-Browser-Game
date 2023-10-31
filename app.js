@@ -28,9 +28,8 @@ function generateSequence() {
   playerSequence.length = 0;
   masterSequence.sort(() => Math.random() - 0.5);
   computerSequence.push(...masterSequence.slice(0, 4));
-  console.log(computerSequence)
+  console.log(computerSequence);
 }
-
 
 let elementsToAdd = 5;
 
@@ -39,7 +38,7 @@ function generateHarderSequence() {
   computerSequence.push(...masterSequence.slice(0, elementsToAdd));
 
   elementsToAdd++;
-  console.log(computerSequence)
+  console.log(computerSequence);
 }
 
 //Event listener for start button
@@ -50,9 +49,9 @@ startButton.addEventListener("click", startGame);
 
 function startGame() {
   displayMessage();
-  generateSequence()
+  generateSequence();
   //alert("Watch the pattern carefully! Press start to see the pattern again");
-  console.log("Watch the pattern carefully! Press start to see the pattern again");
+  //console.log("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
 }
 
@@ -65,7 +64,7 @@ async function displaySequence() {
   for (const id of computerSequence) {
     const button = document.getElementById(id);
     button.classList.add("shake");
-    await sleep(1000);
+    await sleep(1300);
     button.classList.remove("shake");
     await sleep(1000);
   }
@@ -112,11 +111,15 @@ function submitButtonClick() {
   if (sequencesMatch) {
     wins += 1;
     //alert("Delicious! The sequences match. Press NEXT for the next level");
-    console.log("Delicious! The sequences match. Press NEXT for the next level");
+    console.log(
+      "Delicious! The sequences match. Press NEXT for the next level"
+    );
   } else {
-    losses +=1;
+    losses += 1;
     //alert( "You burned the meal! Your sequence didn't match. Press START to play again");
-    console.log("You burned the meal! Your sequence didn't match. Press START to play again");
+    console.log(
+      "You burned the meal! Your sequence didn't match. Press START to play again"
+    );
   }
   console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
@@ -156,10 +159,16 @@ function nextLevel() {
 }
 
 //Display messages to player
+//Use a setTimeout to display the message for 10 seconds, then show a second message
 const messageText = document.getElementById("message-text");
 
 function displayMessage() {
-  messageText.innerHTML = 'Watch the pattern carfully!';
+  messageText.innerHTML = "Watch the pattern carefully!";
+  setTimeout(() => {
+    messageText.innerHTML = "";
+    setTimeout(() => {
+      messageText.innerHTML = "Now, repeat the pattern and press submit.";
+    }, 1000);
+  }, 9000);
 }
 //console.log(displayMessage);
-
