@@ -48,11 +48,13 @@ startButton.addEventListener("click", startGame);
 //Start game function
 
 function startGame() {
-  displayMessage();
+  startMessage();
   generateSequence();
   //alert("Watch the pattern carefully! Press start to see the pattern again");
   //console.log("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
+  hideStartButton()
+  showSubmitButton()
 }
 
 //Display randomized pattern on game board. Using async/await to make buttons shake one after another, instead of all at the same time
@@ -110,16 +112,12 @@ function submitButtonClick() {
   const sequencesMatch = compareSequences();
   if (sequencesMatch) {
     wins += 1;
-    //alert("Delicious! The sequences match. Press NEXT for the next level");
-    //console.log(
-     // "Delicious! The sequences match. Press NEXT for the next level"
-    //);
+    showNextButton()
+    //display message to go here
   } else {
     losses += 1;
-    //alert( "You burned the meal! Your sequence didn't match. Press START to play again");
-   // console.log(
-      //"You burned the meal! Your sequence didn't match. Press START to play again"
-    //);
+    showStartButton()
+    //display message to go here
   }
   updateStats();
   console.log(`Wins: ${wins}, Loses: ${losses}`);
@@ -155,16 +153,17 @@ function nextLevel() {
   //masterSequence.length = 0;
   computerSequence.length = 0;
   playerSequence.length = 0;
-  displayMessage()
+  startMessage()
   generateHarderSequence();
   displaySequence();
+  hideNextButton()
 }
 
 //Display messages to player
 //Use a setTimeout to display the message for 10 seconds, then show a second message
 const messageText = document.getElementById("message-text");
 
-function displayMessage() {
+function startMessage() {
   messageText.innerHTML = "Watch the pattern carefully!";
   setTimeout(() => {
     messageText.innerHTML = "Now, repeat the pattern and press submit.";
@@ -173,13 +172,63 @@ function displayMessage() {
     }, 10000);
   }, 9000);
 }
-//console.log(displayMessage);
+//console.log(startMessage);
 
-//Function to update wins, losses and streaks
+//Function to update wins and losses
 function updateStats() {
   const winsElement = document.getElementById("wins");
   const lossesElement = document.getElementById("losses");
 
   winsElement.innerHTML = `Wins: ${wins}`;
   lossesElement.innerHTML = `Losses: ${losses}`;
+}
+
+//Functions to make the toggle buttons appear and disappear when not in use
+
+// Function to show the "START" button
+function showStartButton() {
+  const startButton = document.getElementById("start-button");
+  startButton.style.display = "block";
+}
+
+// Function to hide the "START" button
+function hideStartButton() {
+  const startButton = document.getElementById("start-button");
+  startButton.style.display = "none";
+}
+
+// Function to show the "SUBMIT" button
+function showSubmitButton() {
+  const submitButton = document.getElementById("submit-button");
+  submitButton.style.display = "block";
+}
+
+// Function to hide the "SUBMIT" button
+function hideSubmitButton() {
+  const submitButton = document.getElementById("submit-button");
+  submitButton.style.display = "none";
+}
+
+// Function to show the "RESTART" button
+function showRestartButton() {
+  const restartButton = document.getElementById("restart-button");
+  restartButton.style.display = "block";
+}
+
+// Function to hide the "RESTART" button
+function hideRestartButton() {
+  const restartButton = document.getElementById("restart-button");
+  restartButton.style.display = "none";
+}
+
+// Function to show the "NEXT" button
+function showNextButton() {
+  const nextButton = document.getElementById("next-button");
+  nextButton.style.display = "block";
+}
+
+// Function to hide the "NEXT" button
+function hideNextButton() {
+  const nextButton = document.getElementById("next-button");
+  nextButton.style.display = "none";
 }
