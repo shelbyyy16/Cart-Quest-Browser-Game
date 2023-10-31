@@ -26,8 +26,6 @@ buttons.forEach((button) => {
 const computerSequence = [];
 const playerSequence = [];
 
-//console.log(computerSequence);
-//console.log(playerSequence);
 
 //Stats
 let wins = 0;
@@ -64,8 +62,6 @@ startButton.addEventListener("click", startGame,)
 function startGame() {
   startMessage();
   generateSequence();
-  //alert("Watch the pattern carefully! Press start to see the pattern again");
-  //console.log("Watch the pattern carefully! Press start to see the pattern again");
   displaySequence();
   hideStartButton();
   showSubmitButton();
@@ -78,11 +74,13 @@ function sleep(ms) {
 
 async function displaySequence() {
   await sleep(2000);
-  
+
   for (const id of computerSequence) {
     const button = document.getElementById(id);
+    button.style.backgroundColor = "red";
     button.classList.add("shake");
     await sleep(1300);
+    button.style.backgroundColor = "";
     button.classList.remove("shake");
     await sleep(1000);
   }

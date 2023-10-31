@@ -66,6 +66,10 @@ Body {
   border-color: mediumslateblue;
 }
 
+.grid-button:active {
+  border: 8px solid red;
+}
+
 .icon {
   height: 140px;
   width: 140px;
