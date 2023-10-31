@@ -6,14 +6,22 @@
 
 .header-title {
   text-align: center;
+  font-size: 48px;
 }
 
 .main-container {
   border: 8px solid red;
 }
 
+.display-container {
+  border: 6px solid purple;
+}
+
+#message-box {
+  text-align: center;
+  border: 6px solid rgb(228, 47, 150);
+}
 .game-container {
- 
   border: 4px solid yellow;
   text-align: center;
 }
