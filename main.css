@@ -12,8 +12,8 @@ Body {
 }
 
 .main-container {
-  border: 8px solid red;
-  background-color: lightcoral;
+  border: 4px solid red;
+  background-color: rgb(244, 190, 190);
   max-width: 800px;
   margin: auto;
   height: 100vh;
@@ -24,7 +24,7 @@ Body {
 }
 
 .message-container {
-  border: 6px solid purple;
+  border: 4px solid purple;
   background-color: rgb(192, 150, 211);
   margin-top: 20px;
   width: 700px;
@@ -38,22 +38,26 @@ Body {
   border: 4px solid yellow;
   background-color: lightyellow;
   text-align: center;
-  width: 700px;
+  width: 680px;
   margin: 20px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button-grid-wrapper {
+  border: 4px solid rgb(238, 76, 103);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  align-items: center;
   text-align: center;
+  align-items: center; /* Add this to center the grid items vertically */
 }
 
 .grid-button {
-  height: 200px;
-  width: 220px;
+  height: 180px;
+  width: 200px;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
@@ -92,6 +96,9 @@ Body {
   border: 4px solid blue;
   background-color: lightblue;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
   width: 700px;
   height: 20px;
@@ -100,6 +107,9 @@ Body {
 .toggle-container {
   border: 4px solid green;
   background-color: lightgreen;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   width: 700px;
   height: 20px;

@@ -113,11 +113,11 @@ function submitButtonClick() {
   if (sequencesMatch) {
     wins += 1;
     showNextButton();
-    //display message to go here
+    winMessage()
   } else {
     losses += 1;
     showStartButton();
-    //display message to go here
+    loseMessage()
   }
   hideSubmitButton();
   updateStats();
@@ -174,6 +174,26 @@ function startMessage() {
     }, 10000);
   }, 9000);
 }
+
+function winMessage() {
+  messageText.innerHTML = "You got everything on the list! You rockstar";
+  setTimeout(() => {
+    messageText.innerHTML = "Press next to continue to the next level";
+    setTimeout(() => {
+      messageText.innerHTML = "";
+    }, 5000); 
+  }, 2000); 
+}
+
+function loseMessage() {
+  messageText.innerHTML = "Oh no! You forgot something on the list";
+  setTimeout(() => {
+    messageText.innerHTML = "Press start to try again";
+    setTimeout(() => {
+      messageText.innerHTML = "";
+    }, 5000);
+  }, 2000);
+}
 //console.log(startMessage);
 
 //Function to update wins and losses
@@ -184,6 +204,7 @@ function updateStats() {
   winsElement.innerHTML = `Wins: ${wins}`;
   lossesElement.innerHTML = `Losses: ${losses}`;
 }
+
 
 //Functions to make the toggle buttons appear and disappear when not in use
 
