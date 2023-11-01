@@ -70,6 +70,10 @@ Body {
   
 }
 
+.grid-button:hover {
+  background-color: rgb(249, 226, 125);
+}
+
 .grid-button:active {
   border: 8px solid rgb(219, 96, 96);
   background-color: rgb(249, 226, 125) ;
@@ -172,6 +176,12 @@ Body {
 
 .message-content {
   text-align: center;
+}
+
+.cart {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 #close-button {
