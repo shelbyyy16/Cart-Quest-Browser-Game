@@ -172,10 +172,6 @@ Body {
   text-align: center;
 }
 
-.message-content {
-  text-align: center;
-}
-
 .cart {
   font-family: "Shadows Into Light", cursive;
   font-weight: bold;
@@ -195,4 +191,6 @@ Body {
 p1 {
   color: rgb(219, 96, 96);
   font-size: x-large;
+  text-align: center;
 }
+

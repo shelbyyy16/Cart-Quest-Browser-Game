@@ -1,5 +1,7 @@
 console.log("js:loaded");
 
+//Display pop up message with game instructions
+
 window.addEventListener("load", (event) => {
   beginMessage();
   showMessage();
@@ -8,13 +10,12 @@ window.addEventListener("load", (event) => {
 function beginMessage() {
   messageText.innerHTML = "Press start to begin";
 
-  // Add a click event listener to the start button
   startButton.addEventListener("click", function () {
-    messageText.innerHTML = ""; // Clear the message when the start button is clicked
+    messageText.innerHTML = ""; 
   });
 }
 
-//Master Array to store all game board button id's//
+//Master Array to store all game board button id's
 const buttons = document.querySelectorAll(".grid-button");
 const masterSequence = [];
 buttons.forEach((button) => {
@@ -22,17 +23,15 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => handleButtonClick(button.id));
 });
 
-//Computer empty array and Player empty arrray//
+//Computer empty array and Player empty arrray
 const computerSequence = [];
 const playerSequence = [];
 
 //Stats
 let wins = 0;
 let losses = 0;
-//ICE BOX: let level = 0;
-console.log(`Wins: ${wins}, Loses: ${losses}`);
 
-//Randomize the game array//
+//Randomize the game array
 
 function generateSequence() {
   computerSequence.length = 0;
@@ -42,6 +41,7 @@ function generateSequence() {
   console.log(computerSequence);
 }
 
+//Add additional element to array each level to increase difficulty
 let elementsToAdd = 5;
 
 function generateHarderSequence() {
@@ -118,8 +118,6 @@ function compareSequences() {
 
 //compareSequences triggered by pressing "Submit" button
 function submitButtonClick() {
-  //console.log("Submit button clicked!");
-
   const sequencesMatch = compareSequences();
   if (sequencesMatch) {
     wins += 1;
@@ -132,10 +130,9 @@ function submitButtonClick() {
   }
   hideSubmitButton();
   updateStats();
-  console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
 
-//Event listener for next button, that activates generateHarderSequence to make the next level harder
+//Event listener for next button, that activates generateHarderSequence 
 
 const nextButton = document.getElementById("next-button");
 
@@ -144,8 +141,6 @@ nextButton.addEventListener("click", () => {
 });
 
 function nextLevel() {
-  //console.log("Next button clicked!");
-  //masterSequence.length = 0;
   computerSequence.length = 0;
   playerSequence.length = 0;
   startMessage();
