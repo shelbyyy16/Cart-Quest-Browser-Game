@@ -3,8 +3,7 @@ console.log("js:loaded");
 window.addEventListener("load", (event) => {
   beginMessage();
   showMessage();
-})
-
+});
 
 function beginMessage() {
   messageText.innerHTML = "Press start to begin";
@@ -26,7 +25,6 @@ buttons.forEach((button) => {
 //Computer empty array and Player empty arrray//
 const computerSequence = [];
 const playerSequence = [];
-
 
 //Stats
 let wins = 0;
@@ -56,7 +54,7 @@ function generateHarderSequence() {
 
 //Event listener for start button
 const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", startGame,)
+startButton.addEventListener("click", startGame);
 
 //Start game function
 
@@ -92,7 +90,11 @@ async function displaySequence() {
 
 function handleButtonClick(clickedId) {
   playerSequence.push(clickedId);
-  console.log("Button " + clickedId + " was clicked. playerSequence: " + playerSequence.join(", ")
+  console.log(
+    "Button " +
+      clickedId +
+      " was clicked. playerSequence: " +
+      playerSequence.join(", ")
   );
 }
 
@@ -133,23 +135,6 @@ function submitButtonClick() {
   console.log(`Wins: ${wins}, Loses: ${losses}`);
 }
 
-//Event listener for restart button, that activates the restartGame function
-
-const restartButton = document.getElementById("restart-button");
-
-restartButton.addEventListener("click", () => {
-  restartGame();
-});
-
-//Function to restart the game (reset Wins, Losses, and Current Streak)
-
-function restartGame() {
-  //console.log("Restart button clicked!");
-  wins = 0;
-  losses = 0;
-  console.log(`Wins: ${wins}, Loses: ${losses}`);
-}
-
 //Event listener for next button, that activates generateHarderSequence to make the next level harder
 
 const nextButton = document.getElementById("next-button");
@@ -182,8 +167,8 @@ function startMessage() {
       setTimeout(() => {
         messageText.innerHTML = "";
       }, 10000);
-    }, 4000); 
-  }, 100); 
+    }, 4000);
+  }, 100);
 }
 
 function winMessage() {
@@ -242,17 +227,6 @@ function hideSubmitButton() {
   submitButton.style.display = "none";
 }
 
-// Function to show the "RESTART" button
-function showRestartButton() {
-  const restartButton = document.getElementById("restart-button");
-  restartButton.style.display = "block";
-}
-
-// Function to hide the "RESTART" button
-function hideRestartButton() {
-  const restartButton = document.getElementById("restart-button");
-  restartButton.style.display = "none";
-}
 
 // Function to show the "NEXT" button
 function showNextButton() {
@@ -268,14 +242,14 @@ function hideNextButton() {
 
 //Function to display a rules to the player before they begin
 
-  const messageBox = document.getElementById("message-box");
-  const closeButton = document.getElementById("close-button");
-  function showMessage(message) {
-    const messageContent = messageBox.querySelector("p");
-    messageContent.textContent = message;
-    messageBox.style.display = "block";
-  }
-  function hideMessage() {
-    messageBox.style.display = "none";
-  }
-  closeButton.addEventListener("click", hideMessage);
+const messageBox = document.getElementById("message-box");
+const closeButton = document.getElementById("close-button");
+function showMessage(message) {
+  const messageContent = messageBox.querySelector("p");
+  messageContent.textContent = message;
+  messageBox.style.display = "block";
+}
+function hideMessage() {
+  messageBox.style.display = "none";
+}
+closeButton.addEventListener("click", hideMessage);
