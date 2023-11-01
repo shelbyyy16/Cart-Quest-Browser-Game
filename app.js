@@ -30,7 +30,7 @@ const playerSequence = [];
 //Stats
 let wins = 0;
 let losses = 0;
-let streak = 0;
+//ICE BOX: let level = 0;
 console.log(`Wins: ${wins}, Loses: ${losses}`);
 
 //Randomize the game array//
@@ -181,8 +181,8 @@ function startMessage() {
       setTimeout(() => {
         messageText.innerHTML = "";
       }, 10000);
-    }, 2000); // Delay for 2 seconds before displaying the second message
-  }, 100); // Total delay of 7 seconds before the first message
+    }, 4000); 
+  }, 100); 
 }
 
 function winMessage() {

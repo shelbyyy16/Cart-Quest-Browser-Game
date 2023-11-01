@@ -49,3 +49,10 @@ https://www.canva.com/design/DAFyetwRWbA/Z-CWeIO4n2uwTOq4rvOt-w/edit?utm_content
 ## PLAY AGAIN
 -randomize array again
 -goes back to render
+
+## COLOR SCHEME
+Light Blue: rgb(119, 168, 199);
+Faded Red: rgb(219, 96, 96)
+White: rgb(240, 240, 240)
+Pale Yellow: rgb(249, 226, 125)
+Navy Blue: rgb(51, 57, 140)

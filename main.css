@@ -13,7 +13,7 @@ Body {
   font-size: 58px;
   color: rgb(219, 96, 96);
   font-family: "Shadows Into Light", cursive;
-  margin: 0;
+  margin: 10px;
 }
 
 .main-container {
@@ -160,11 +160,3 @@ Body {
 
 
 
-
-COLORS:
-
-Light Blue: rgb(119, 168, 199);
-Faded Red: rgb(219, 96, 96)
-White: rgb(240, 240, 240)
-Pale Yellow: rgb(249, 226, 125)
-Navy Blue: rgb(51, 57, 140)
