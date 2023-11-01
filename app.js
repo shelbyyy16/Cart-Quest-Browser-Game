@@ -2,6 +2,7 @@ console.log("js:loaded");
 
 window.addEventListener("load", (event) => {
   beginMessage();
+  showMessage();
 })
 
 
@@ -264,3 +265,17 @@ function hideNextButton() {
   const nextButton = document.getElementById("next-button");
   nextButton.style.display = "none";
 }
+
+//Function to display a rules to the player before they begin
+
+  const messageBox = document.getElementById("message-box");
+  const closeButton = document.getElementById("close-button");
+  function showMessage(message) {
+    const messageContent = messageBox.querySelector("p");
+    messageContent.textContent = message;
+    messageBox.style.display = "block";
+  }
+  function hideMessage() {
+    messageBox.style.display = "none";
+  }
+  closeButton.addEventListener("click", hideMessage);
