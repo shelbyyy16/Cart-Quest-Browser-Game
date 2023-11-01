@@ -5,13 +5,13 @@ Body {
   background-position: center;
   margin: 0;
   font-family: "Bitter", serif;
-  color: rgb(60, 72, 107);
+  color: rgb(51, 57, 140);
 }
 
 .header-title {
   text-align: center;
   font-size: 58px;
-  color: rgb(60, 72, 107);
+  color: rgb(219, 96, 96);
   font-family: "Shadows Into Light", cursive;
   margin: 0;
 }
@@ -29,18 +29,19 @@ Body {
 }
 
 .message-container {
-  border: 4px solid rgb(249, 217, 73);
+  border: 4px solid rgb(51, 57, 140);
   background-color: rgb(240, 240, 240);
   width: 700px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .game-container {
-  border: 4px solid rgb(60, 72, 107);
-  background-color: rgb(249, 217, 73);
+  border: 4px solid rgb(51, 57, 140);
+  background-color: rgb(119, 168, 199);
   text-align: center;
   width: 680px;
   margin: 10px 10px 0px 10px;
@@ -48,6 +49,7 @@ Body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
 }
 
 .button-grid-wrapper {
@@ -59,17 +61,19 @@ Body {
 }
 
 .grid-button {
+  border: 3px solid rgb(219, 96, 96);
+  background: rgb(240, 240, 240);
   height: 180px;
   width: 200px;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
-  border-color: rgb(60, 72, 107);
-  background: rgb(240, 240, 240);
+  
 }
 
 .grid-button:active {
-  border: 8px solid rgb(244, 80, 80);
+  border: 8px solid rgb(219, 96, 96);
+  background-color: rgb(249, 226, 125) ;
 }
 
 .icon {
@@ -101,6 +105,9 @@ Body {
 }
 
 .stats-container {
+  border: 4px solid rgb(51, 57, 140);
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -108,9 +115,10 @@ Body {
   align-items: center;
   margin: 10px;
   width: 700px;
-  height: 20px;
+  height: 40px;
   font-size: 20px;
   font-weight: 400;
+  
 }
 
 .toggle-container {
@@ -126,16 +134,37 @@ Body {
 .action-button {
   display: none;
   text-align: center;
-  height: 50px;
+  height: 60px;
   width: 200px;
   border-radius: 10px;
-  
+  border: 4px solid rgb(51, 57, 140);
+  background-color: rgb(119, 168, 199);
+  color:rgb(51, 57, 140);
+  font-family: "Bitter", serif;
+  font-size: large;
+  font-weight: 400;
 }
 #start-button {
   text-align: center;
-  height: 50px;
+  height: 60px;
   width: 200px;
   border-radius: 10px;
-  border: 4px solid rgb(60, 72, 107);
-  background-color: rgb(249, 217, 73);
+  border: 4px solid rgb(51, 57, 140);
+  background-color: rgb(119, 168, 199);
+  color:rgb(51, 57, 140);
+  font-family: "Bitter", serif;
+  font-size: large;
+  font-weight: 400;
 }
+
+
+
+
+
+COLORS:
+
+Light Blue: rgb(119, 168, 199);
+Faded Red: rgb(219, 96, 96)
+White: rgb(240, 240, 240)
+Pale Yellow: rgb(249, 226, 125)
+Navy Blue: rgb(51, 57, 140)

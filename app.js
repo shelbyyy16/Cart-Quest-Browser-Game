@@ -77,7 +77,7 @@ async function displaySequence() {
 
   for (const id of computerSequence) {
     const button = document.getElementById(id);
-    button.style.backgroundColor = "red";
+    button.style.backgroundColor = "rgb(249, 226, 125)";
     button.classList.add("shake");
     await sleep(1300);
     button.style.backgroundColor = "";
