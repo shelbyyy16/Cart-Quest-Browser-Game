@@ -6,9 +6,8 @@ Game Background: As you are heading out the door your nosey neighbor notices you
 Cart Quest is a short term memory game that consists of being displayed a sequence and repeating it back. With each level successfully beaten, the next level gets harder, adding more to the sequence each time.
 
 ## Screenshot(s): 
-Images of your actual game.
 
-Note: if you edit your README.md on the github website editor, you can copy and paste image files directly to your markdown.
+[Screenshot](https://github.com/shelbyyy16/Project-1/blob/main/images/CartQuest%20Screenshot.png?raw=true)
 
 ## Technologies Used: 
 - Javascript
