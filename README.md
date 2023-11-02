@@ -1,9 +1,8 @@
 A README.md file with these sections:
 
 ## Game Title: Cart Quest
-Game Background: As you are heading out the door your nosey neighbor notices your re-usable grocery bags and their eyes light up. They quickly shove a grocery list into your hand, yell "Thanks!" and shut the door before you know what just happened. *Sigh*
 
-Cart Quest is a short term memory game that consists of being displayed a sequence and repeating it back. With each level successfully beaten, the next level gets harder, adding more to the sequence each time.
+Cart Quest is a memory game where you must remember and repeat a sequence of grocery items. It keeps track of your wins and losses and offers increasingly challenging levels as you progress through the game. Messages are displayed to guide you, and buttons appear and disappear to control your interactions.
 
 ## Screenshot(s): 
 

@@ -72,7 +72,7 @@ function sleep(ms) {
 }
 
 async function displaySequence() {
-  await sleep(3000);
+  await sleep(4000);
 
   for (const id of computerSequence) {
     const button = document.getElementById(id);
