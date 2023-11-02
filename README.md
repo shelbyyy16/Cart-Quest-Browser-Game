@@ -15,7 +15,7 @@ Cart Quest is a short term memory game that consists of being displayed a sequen
 - CSS
 
 ## Getting Started: 
-In this section include the link to your deployed game 
+[Cart Quest](https://shelbyyy16.github.io/Cart-Quest-Browser-Game/)
 
 Instructions
 Watch the sequence play out carefully.
