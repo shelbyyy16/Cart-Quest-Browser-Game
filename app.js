@@ -83,6 +83,7 @@ async function displaySequence() {
     button.classList.remove("shake");
     await sleep(1000);
   }
+
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
@@ -178,8 +179,6 @@ function winMessage() {
   }, 100);
 }
 
-
-
 function loseMessage() {
   setTimeout(() => {
     messageText.innerHTML = "Oh no! You forgot something on the list";
@@ -204,38 +203,31 @@ function updateStats() {
 
 //Functions to make the toggle buttons appear and disappear when not in use
 
-// Function to show the "START" button
 function showStartButton() {
   const startButton = document.getElementById("start-button");
   startButton.style.display = "block";
 }
 
-// Function to hide the "START" button
 function hideStartButton() {
   const startButton = document.getElementById("start-button");
   startButton.style.display = "none";
 }
 
-// Function to show the "SUBMIT" button
 function showSubmitButton() {
   const submitButton = document.getElementById("submit-button");
   submitButton.style.display = "block";
 }
 
-// Function to hide the "SUBMIT" button
 function hideSubmitButton() {
   const submitButton = document.getElementById("submit-button");
   submitButton.style.display = "none";
 }
 
-
-// Function to show the "NEXT" button
 function showNextButton() {
   const nextButton = document.getElementById("next-button");
   nextButton.style.display = "block";
 }
 
-// Function to hide the "NEXT" button
 function hideNextButton() {
   const nextButton = document.getElementById("next-button");
   nextButton.style.display = "none";
@@ -254,3 +246,6 @@ function hideMessage() {
   messageBox.style.display = "none";
 }
 closeButton.addEventListener("click", hideMessage);
+
+
+
