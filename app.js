@@ -72,7 +72,7 @@ function sleep(ms) {
 }
 
 async function displaySequence() {
-  await sleep(2000);
+  await sleep(3000);
 
   for (const id of computerSequence) {
     const button = document.getElementById(id);
@@ -162,30 +162,36 @@ function startMessage() {
       setTimeout(() => {
         messageText.innerHTML = "";
       }, 10000);
-    }, 4000);
+    }, 8000);
   }, 100);
 }
 
 function winMessage() {
-  messageText.innerHTML = "You got everything on the list! You rockstar";
+  messageText.innerHTML = "You got everything on the list!";
   setTimeout(() => {
-    messageText.innerHTML = "Press next to continue to the next level";
+    messageText.innerHTML = "";
+    
     setTimeout(() => {
-      messageText.innerHTML = "";
-    }, 5000);
-  }, 2000);
+      messageText.innerHTML = "Press next to move to the next level";
+      setTimeout(() => {
+        messageText.innerHTML = "";
+      }, 8000); 
+    }, 8000); 
+  }, 200);
 }
 
 function loseMessage() {
   messageText.innerHTML = "Oh no! You forgot something on the list";
   setTimeout(() => {
-    messageText.innerHTML = "Press start to try again";
+    messageText.innerHTML = "";
     setTimeout(() => {
-      messageText.innerHTML = "";
-    }, 5000);
-  }, 2000);
+      messageText.innerHTML = "Press start to try again";
+      setTimeout(() => {
+        messageText.innerHTML = "";
+      }, 10000);
+    }, 10000); 
+  }, 200);
 }
-//console.log(startMessage);
 
 //Function to update wins and losses
 function updateStats() {
