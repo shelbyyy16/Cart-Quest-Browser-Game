@@ -167,31 +167,31 @@ function startMessage() {
 }
 
 function winMessage() {
-  messageText.innerHTML = "You got everything on the list!";
   setTimeout(() => {
-    messageText.innerHTML = "";
-    
+    messageText.innerHTML = "You got everything on the list!";
     setTimeout(() => {
       messageText.innerHTML = "Press next to move to the next level";
       setTimeout(() => {
         messageText.innerHTML = "";
-      }, 8000); 
-    }, 8000); 
-  }, 200);
+      }, 9000); 
+    }, 9000); 
+  }, 100);
 }
 
+
+
 function loseMessage() {
-  messageText.innerHTML = "Oh no! You forgot something on the list";
   setTimeout(() => {
-    messageText.innerHTML = "";
+    messageText.innerHTML = "Oh no! You forgot something on the list";
     setTimeout(() => {
       messageText.innerHTML = "Press start to try again";
       setTimeout(() => {
         messageText.innerHTML = "";
-      }, 10000);
-    }, 10000); 
-  }, 200);
+      }, 9000); 
+    }, 9000); 
+  }, 100);
 }
+
 
 //Function to update wins and losses
 function updateStats() {
