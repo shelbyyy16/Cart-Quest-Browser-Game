@@ -16,12 +16,12 @@ Cart Quest is a memory game where you must remember and repeat a sequence of gro
 ## Getting Started: 
 [Cart Quest](https://shelbyyy16.github.io/Cart-Quest-Browser-Game/)
 
-### Instructions
-Watch the sequence play out carefully.
-When the sequence is done displaying, play the sequence back by clicking the correct food.
-Press submit when you are finished.
-If you are correct, you will move on to the next level which will be more difficult.
-If you are wrong, you will start the level again.
+Instructions
+- Watch the sequence play out carefully.
+- When the sequence is done displaying, play the sequence back by clicking the correct food.
+- Press submit when you are finished.
+- If you are correct, you will move on to the next level which will be more difficult.
+- If you are wrong, you will start the level again.
 
 
 ## Next Steps: 
