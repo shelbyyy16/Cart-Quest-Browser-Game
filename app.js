@@ -11,9 +11,22 @@ function beginMessage() {
   messageText.innerHTML = "Press start to begin";
 
   startButton.addEventListener("click", function () {
-    messageText.innerHTML = ""; 
+    messageText.innerHTML = "";
   });
 }
+
+const messageBox = document.getElementById("message-box");
+const closeButton = document.getElementById("close-button");
+
+function showMessage(message) {
+  const messageContent = messageBox.querySelector("p");
+  messageContent.textContent = message;
+  messageBox.style.display = "block";
+}
+function hideMessage() {
+  messageBox.style.display = "none";
+}
+closeButton.addEventListener("click", hideMessage);
 
 //Master Array to store all game board button id's
 const buttons = document.querySelectorAll(".grid-button");
@@ -83,7 +96,6 @@ async function displaySequence() {
     button.classList.remove("shake");
     await sleep(1000);
   }
-
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
@@ -91,12 +103,6 @@ async function displaySequence() {
 
 function handleButtonClick(clickedId) {
   playerSequence.push(clickedId);
-  console.log(
-    "Button " +
-      clickedId +
-      " was clicked. playerSequence: " +
-      playerSequence.join(", ")
-  );
 }
 
 //Event listener for Submit button
@@ -133,7 +139,7 @@ function submitButtonClick() {
   updateStats();
 }
 
-//Event listener for next button, that activates generateHarderSequence 
+//Event listener for next button, that activates generateHarderSequence
 
 const nextButton = document.getElementById("next-button");
 
@@ -174,8 +180,8 @@ function winMessage() {
       messageText.innerHTML = "Press next to move to the next level";
       setTimeout(() => {
         messageText.innerHTML = "";
-      }, 9000); 
-    }, 9000); 
+      }, 9000);
+    }, 9000);
   }, 100);
 }
 
@@ -186,11 +192,10 @@ function loseMessage() {
       messageText.innerHTML = "Press start to try again";
       setTimeout(() => {
         messageText.innerHTML = "";
-      }, 9000); 
-    }, 9000); 
+      }, 9000);
+    }, 9000);
   }, 100);
 }
-
 
 //Function to update wins and losses
 function updateStats() {
@@ -232,20 +237,3 @@ function hideNextButton() {
   const nextButton = document.getElementById("next-button");
   nextButton.style.display = "none";
 }
-
-//Function to display a rules to the player before they begin
-
-const messageBox = document.getElementById("message-box");
-const closeButton = document.getElementById("close-button");
-function showMessage(message) {
-  const messageContent = messageBox.querySelector("p");
-  messageContent.textContent = message;
-  messageBox.style.display = "block";
-}
-function hideMessage() {
-  messageBox.style.display = "none";
-}
-closeButton.addEventListener("click", hideMessage);
-
-
-

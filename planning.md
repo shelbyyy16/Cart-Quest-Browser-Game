@@ -5,10 +5,10 @@ Simon
 
 ## User Stories
 1. As a player, I would like to start when I am ready
-2. As a player, when I am ready I would like to see the Simon pattern
-3. As a player, I would like to click buttons for my Simon selection
-4. As a user I would like to press submit when I am done selecting my answers
-5. As a user, after I submit my patter I would like to know if I won or lost
+2. As a player, when I am ready I would like to see the Computer sequence
+3. As a player, I would like to click buttons for my sequence selection
+4. As a player I would like to press submit when I am done selecting my answers
+5. As a player, after I submit my sequence I would like to know if I won or lost
 6. ICEBOX: As a player, I would like to see how many rounds I have won/lost
 7. ICEBOX: As a player, I would like to see my current streaks of wins
 
