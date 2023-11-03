@@ -51,7 +51,6 @@ function generateSequence() {
   playerSequence.length = 0;
   masterSequence.sort(() => Math.random() - 0.5);
   computerSequence.push(...masterSequence.slice(0, 4));
-  console.log(computerSequence);
 }
 
 //Add additional element to array each level to increase difficulty
@@ -62,7 +61,6 @@ function generateHarderSequence() {
   computerSequence.push(...masterSequence.slice(0, elementsToAdd));
 
   elementsToAdd++;
-  console.log(computerSequence);
 }
 
 //Event listener for start button
