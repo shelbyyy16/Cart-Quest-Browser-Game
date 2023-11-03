@@ -4,9 +4,8 @@ A README.md file with these sections:
 
 Cart Quest is a memory game where you must remember and repeat a sequence of grocery items. It keeps track of your wins and losses and offers increasingly challenging levels as you progress through the game. Messages are displayed to guide you, and buttons appear and disappear to control your interactions.
 
-## Screenshot(s): 
-- ![Gameplay Demo](https://github.com/shelbyyy16/Cart-Quest-Browser-Game/blob/main/Cart%20Quest%20Demo.gif?raw=true)
-- ![Screenshot](https://github.com/shelbyyy16/Project-1/blob/main/images/CartQuest%20Screenshot.png?raw=true)
+
+![Screenshot](https://github.com/shelbyyy16/Project-1/blob/main/images/CartQuest%20Screenshot.png?raw=true)
 
 ## Technologies Used: 
 - Javascript
