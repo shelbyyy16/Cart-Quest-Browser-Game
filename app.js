@@ -179,8 +179,8 @@ function winMessage() {
       messageText.innerHTML = "Press next to move to the next level";
       setTimeout(() => {
         messageText.innerHTML = "";
-      }, 9000);
-    }, 9000);
+      }, 8000);
+    }, 10000);
   }, 100);
 }
 
