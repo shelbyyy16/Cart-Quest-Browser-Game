@@ -24,6 +24,7 @@ Instructions
 
 
 ## Next Steps: 
+- Make the game mobile friendly
 - Continue to work on the proper timing of display messages to the player
 - Add a function to track what level you are on, and display it on screen
 - Disable icon buttons while the sequence is being displayed
