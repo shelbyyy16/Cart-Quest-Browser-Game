@@ -24,6 +24,7 @@ Instructions
 
 
 ## Next Steps: 
+- Continue to work on the proper timing of display messages to the player
 - Add a function to track what level you are on, and display it on screen
 - Disable icon buttons while the sequence is being displayed
 - Make a high-contrast version for visual impairment
