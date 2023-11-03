@@ -97,6 +97,7 @@ async function displaySequence() {
 }
 
 //Event listener for player clicking grid-buttons(placed above in buttons.forEach)
+
 //Function that adds clicked buttons to playerSequence array
 
 function handleButtonClick(clickedId) {
